@@ -1,0 +1,31 @@
+---
+title: "ORHw3"
+output: html_notebook
+---
+
+```{r}
+v=seq(0,10)
+v4=vector(mode = "numeric",length = 10)
+v3=vector(mode = "numeric",length = 10)
+for (y in 1:10) {
+for (q in 1:10) {
+  u=0
+  a=0
+  z=0
+  temp=0
+  for (x in 0:q) {
+    a=a+x*dbinom(x,10,0.3)
+  }
+  for (x in q+1:10) {
+    z=z+q*dbinom(x,10,0.3)
+  }
+  u = (a+z)*5 -max((q-y),0)*2
+  for (x in 0:q) {
+    temp=temp+v[q-x+1]*dbinom(x,10,0.3)
+  }
+  v4[q]=u+temp
+}
+  v3[y]=max(v4)
+}
+print(v3)
+```

@@ -1,0 +1,33 @@
+---
+title: "Untitled"
+output: html_notebook
+---
+
+```{r}
+total_cost = vector(mode = "numeric",12)
+total_times = array(,dim = c(12,12))
+table=array(0,dim = c(14686,12))
+t=0
+for (i in 1:14686) {
+    t = t+ min(work[i,]) * 12 * max(times[i,])
+  }
+  t=t+66428778
+
+  
+  
+# for (k in 1:12) {
+  k=6
+  work_temp=work
+  work_temp[,k]=999
+  for (i in 1:14686) {
+    mini = min(work_temp[i,])
+    total_cost[k] = total_cost[k] + mini * 12 * max(times[i,])
+      
+    table[i,match(mini,work_temp[i,])] = 1
+    }
+
+  total_cost[k]=total_cost[k]+66428778-costs$`Operating cost`[k]
+# }
+print(total_cost)
+```
+

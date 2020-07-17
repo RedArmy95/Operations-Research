@@ -1,0 +1,14 @@
+var h;
+var v;
+
+maximize utility:
+	(- 4 * (4 + 4 * h^2 - sqrt(6) * h) ) / v^2 - h^2 - v;
+
+subject to a:
+	h <= 2 / 3;
+
+subject to b:
+	h >= 0;
+
+subject to c:
+	v >= 1;
